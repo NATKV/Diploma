@@ -3,6 +3,8 @@ import json
 import time
 
 
+
+
 def main():
     short_name = "eshmargunov"
     id = Diploma.get_user_id(short_name)
@@ -26,11 +28,11 @@ def main():
 
     result = []
     for group_id in answer:
-        Diploma.time.sleep(0.5)
+        time.sleep(0.5)
         result.append(Diploma.info_groups(group_id))
 
     with open('../.idea/groups.json', 'w', encoding='utf-8') as f:
-        Diploma.json.dump(result, f, ensure_ascii=False)
+        json.dump(result, f, ensure_ascii=False)
 
     with open("../.idea/groups.json", encoding='utf-8') as f:
         print(f.read())
